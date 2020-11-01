@@ -1,0 +1,15 @@
+terraform init //only once
+
+terraform plan
+
+terraform apply
+
+terraform destroy
+
+# change permission from 604 to 600
+sudo chmod 600 pair_key.pem
+
+#extract the public side of the key
+ssh-keygen -f pair_key.pem -y > pepe1_public.pub
+
+ssh -i "pair_key.pem" ubuntu@ec2-<IP>.compute-1.amazonaws.com
